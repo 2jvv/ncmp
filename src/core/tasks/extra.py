@@ -22,7 +22,7 @@ class ExtraTask:
         try:
             extra_tasks, completed_count = self._get_extra_tasks()
 
-            total_tasks = (7 if not self.config.get('full_extra_tasks', False) else len(extra_tasks) + completed_count)
+            total_tasks = (15 if not self.config.get('full_extra_tasks', False) else len(extra_tasks) + completed_count)
             
             # 如果已经完成任务，直接返回
             if completed_count >= total_tasks:
@@ -140,4 +140,5 @@ class ExtraTask:
 
         except Exception as e:
             self.logger.error(f"上报听歌记录失败: {str(e)}")
+
             raise
